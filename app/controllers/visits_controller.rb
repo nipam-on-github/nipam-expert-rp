@@ -1,4 +1,6 @@
 class VisitsController < ApplicationController
+  before_action :get_visitor
+  #before_action :set_visit, only: [:show, :edit, :update, :destroy]
   before_action :set_visit, only: [:show, :edit, :update, :destroy]
 
   # GET /visits
@@ -28,7 +30,7 @@ class VisitsController < ApplicationController
 
     respond_to do |format|
       if @visit.save
-        format.html { redirect_to @visit, notice: 'Visit was successfully created.' }
+        format.html { redirect_to visitors_path, notice: 'Visit was successfully created.' }
         format.json { render :show, status: :created, location: @visit }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class VisitsController < ApplicationController
   def update
     respond_to do |format|
       if @visit.update(visit_params)
-        format.html { redirect_to @visit, notice: 'Visit was successfully updated.' }
+        format.html { redirect_to @visitor, notice: 'Visit was successfully updated.' }
         format.json { render :show, status: :ok, location: @visit }
       else
         format.html { render :edit }
@@ -62,6 +64,14 @@ class VisitsController < ApplicationController
   end
 
   private
+    def get_visitor
+      @visitor = Visitor.find(params[:visitor_id])
+    end
+
+    def set_visit
+      @visit = @visitor.visits.find(params[:id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_visit
       @visit = Visit.find(params[:id])

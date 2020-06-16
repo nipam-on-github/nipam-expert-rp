@@ -28,7 +28,7 @@ class VisitorsController < ApplicationController
 
     respond_to do |format|
       if @visitor.save
-        format.html { redirect_to @visitor, notice: 'Visitor was successfully created.' }
+        format.html { redirect_to new_visitor_visit_path(@visitor), notice: 'Visitor was successfully created.' }
         format.json { render :show, status: :created, location: @visitor }
       else
         format.html { render :new }

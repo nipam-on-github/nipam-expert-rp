@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  resources :facility_useds
-  resources :visits
-  resources :visitors
   root 'home#index'
   resources :people do
     resources :contacts
@@ -27,6 +24,13 @@ Rails.application.routes.draw do
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+
+  resources :visitors do
+    resources :visits
+  end
+
+  resources :facility_useds
+  
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'

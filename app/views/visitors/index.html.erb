@@ -19,8 +19,7 @@
         <td><%= visitor.contact_number %></td>
         <td><%= visitor.loc_org %></td>
         <td><%= link_to 'Show', visitor %></td>
-        <td><%= link_to 'Edit', edit_visitor_path(visitor) %></td>
-        <td><%= link_to 'Destroy', visitor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Add Visit', new_visitor_visit_path(visitor) %></td>
       </tr>
     <% end %>
   </tbody>

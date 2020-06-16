@@ -15,5 +15,24 @@
   <%= @visitor.loc_org %>
 </p>
 
+<div>
+  <div>
+    <p>Visits</p>
+    <table>
+      <thead>
+        <th>Temperature</th>
+        <th>Time</th>
+        <th>Purpose</th>
+        <th>Visitor</th>
+        <th colspan="3"></th>
+      </thead>
+
+      <tbody>
+        <%= render @visitor.visits %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
 <%= link_to 'Edit', edit_visitor_path(@visitor) %> |
 <%= link_to 'Back', visitors_path %>
