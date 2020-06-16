@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @visitor.name %>
+</p>
+
+<p>
+  <strong>Contact number:</strong>
+  <%= @visitor.contact_number %>
+</p>
+
+<p>
+  <strong>Loc org:</strong>
+  <%= @visitor.loc_org %>
+</p>
+
+<%= link_to 'Edit', edit_visitor_path(@visitor) %> |
+<%= link_to 'Back', visitors_path %>

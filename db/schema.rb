@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_14_155030) do
+ActiveRecord::Schema.define(version: 2020_06_16_141330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -173,6 +173,14 @@ ActiveRecord::Schema.define(version: 2019_12_14_155030) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "visitors", force: :cascade do |t|
+    t.string "name"
+    t.integer "contact_number"
+    t.string "loc_org"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "contacts", "people"
