@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  temperature: 1.5
+  time: 2020-06-16
+  purpose: MyString
+  visitor_id: 1
+
+two:
+  temperature: 1.5
+  time: 2020-06-16
+  purpose: MyString
+  visitor_id: 1

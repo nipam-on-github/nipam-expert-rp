@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_16_141330) do
+ActiveRecord::Schema.define(version: 2020_06_16_143331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -183,6 +183,16 @@ ActiveRecord::Schema.define(version: 2020_06_16_141330) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "visits", force: :cascade do |t|
+    t.float "temperature"
+    t.date "time"
+    t.string "purpose"
+    t.bigint "visitor_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["visitor_id"], name: "index_visits_on_visitor_id"
+  end
+
   add_foreign_key "contacts", "people"
   add_foreign_key "employment_histories", "people"
   add_foreign_key "essays", "people"
@@ -196,4 +206,5 @@ ActiveRecord::Schema.define(version: 2020_06_16_141330) do
   add_foreign_key "specialisations", "categories"
   add_foreign_key "specialisations", "fields"
   add_foreign_key "specialisations", "people"
+  add_foreign_key "visits", "visitors"
 end
