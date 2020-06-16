@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Facility:</strong>
+  <%= @facility_used.facility %>
+</p>
+
+<p>
+  <strong>Visit:</strong>
+  <%= @facility_used.visit_id %>
+</p>
+
+<%= link_to 'Edit', edit_facility_used_path(@facility_used) %> |
+<%= link_to 'Back', facility_useds_path %>

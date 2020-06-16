@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :facility_useds
   resources :visits
   resources :visitors
   root 'home#index'
