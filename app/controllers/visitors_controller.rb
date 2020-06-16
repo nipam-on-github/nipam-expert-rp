@@ -4,6 +4,8 @@ class VisitorsController < ApplicationController
   # GET /visitors
   # GET /visitors.json
   def index
+    new
+
     @visitors = Visitor.all
   end
 

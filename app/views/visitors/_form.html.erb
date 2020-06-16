@@ -11,22 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <p>Required fields are followed by <abbr title="Required">*</abbr></p>
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :name %> <abbr title="Required" aria-label="required">*</abbr> <br />
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :contact_number %>
-    <%= form.number_field :contact_number %>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :contact_number %> <abbr title="Required" aria-label="required">*</abbr> <br />
+      <%= form.number_field :contact_number, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :loc_org %>
-    <%= form.text_field :loc_org %>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :loc_org %> <br />
+      <%= form.text_field :loc_org, class: "form-control" %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %> <hr>
   </div>
 <% end %>

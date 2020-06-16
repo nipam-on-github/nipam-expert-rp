@@ -1,7 +1,7 @@
       <tr>
-        <td><%= visit.temperature %></td>
-        <td><%= visit.time %></td>
         <td><%= visit.purpose %></td>
+        <td><%= visit.created_at %></td>
+        <td><%= visit.temperature %></td>
         <td><%= visit.visitor_id %></td>
         <td><%= link_to 'Edit', edit_visitor_visit_path(@visitor, visit) %></td>
         <td><%= link_to 'Remove', [@visitor, visit], method: :delete, data: { confirm: 'Are you sure?' } %></td>

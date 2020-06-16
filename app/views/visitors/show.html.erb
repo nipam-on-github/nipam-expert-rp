@@ -1,38 +1,51 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <%= render '/layouts/alerts' %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @visitor.name %>
-</p>
+    <div id="personal-details" class="jumbotron">
+      <p>
+        <strong>Name:</strong>
+        <%= @visitor.name %>
+      </p>
 
-<p>
-  <strong>Contact number:</strong>
-  <%= @visitor.contact_number %>
-</p>
+      <p>
+        <strong>Contact number:</strong>
+        <%= @visitor.contact_number %>
+      </p>
 
-<p>
-  <strong>Loc org:</strong>
-  <%= @visitor.loc_org %>
-</p>
+      <p>
+        <strong>Location / Organisation:</strong>
+        <%= @visitor.loc_org %>
+      </p>
+    </div>
 
-<div>
-  <div>
     <p>Visits</p>
-    <table>
-      <thead>
-        <th>Temperature</th>
-        <th>Time</th>
-        <th>Purpose</th>
-        <th>Visitor</th>
-        <th colspan="3"></th>
-      </thead>
 
-      <tbody>
-        <%= render @visitor.visits %>
-      </tbody>
-    </table>
-  </div>
-</div>
+    <div>
+      <div class="table-responsive text-nowrap">
+      <% if @visitor.visits.empty? %>
+        <p>No visits recorded yet.</p>
+      <% else %>
+        <table id="visits-table" class="display">
+          <thead>
+            <th>Purpose</th>
+            <th>Time</th>
+            <th>Temperature</th>
+            <th>Visitor</th>
+            <th></th>
+            <th></th>
+          </thead>
 
-<%= link_to 'Edit', edit_visitor_path(@visitor) %> |
-<%= link_to 'Back', visitors_path %>
+          <tbody>
+            <%= render @visitor.visits %>
+          </tbody>
+        </table>
+        <% end %>
+        <%= link_to 'Add New Visit', new_visitor_visit_path(@visitor), class: 'btn btn-primary' %>
+      </div>
+    </div>
+
+    <hr />
+
+    <%= link_to 'Edit', edit_visitor_path(@visitor) %> |
+    <%= link_to 'Back', visitors_path %>

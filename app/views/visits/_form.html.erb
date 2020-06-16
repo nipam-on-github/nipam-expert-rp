@@ -11,19 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :temperature %>
-    <%= form.text_field :temperature %>
+  <p>Required fields are followed by <abbr title="Required">*</abbr></p>
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :temperature %>  <abbr title="Required" aria-label="required">*</abbr> <br />
+      <%= form.text_field :temperature, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :time %>
-    <%= form.date_select :time %>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :time %>
+      <%= form.date_select :time, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :purpose %>
-    <%= form.text_field :purpose %>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= form.label :purpose %>  <abbr title="Required" aria-label="required">*</abbr> <br />
+      <%= form.text_field :purpose, class: "form-control" %>
+    </div>
   </div>
 
   <div class="form-group">
@@ -31,6 +39,9 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
+
+  <hr />
+
 <% end %>
