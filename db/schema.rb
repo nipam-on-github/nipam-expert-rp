@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_16_144733) do
+ActiveRecord::Schema.define(version: 2020_06_17_090052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -193,7 +193,6 @@ ActiveRecord::Schema.define(version: 2020_06_16_144733) do
 
   create_table "visits", force: :cascade do |t|
     t.float "temperature"
-    t.date "time"
     t.string "purpose"
     t.bigint "visitor_id", null: false
     t.datetime "created_at", null: false
