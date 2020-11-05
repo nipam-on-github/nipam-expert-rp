@@ -43,14 +43,14 @@
     </div>
 
     <div class="form-group col-sm-6">
-      <div  style="color: black;">
+      <div class="reg-purpose-div" style="color: black;">
       <h4 style="color: white;"><%= form.label :purpose %> <abbr title="Required" aria-label="required">*</abbr></h4>
-      <%= form.select :purpose, @purpose_list.collect { |purpose| [purpose,purpose]}, prompt: 'Select Purpose...' %>
+      <%= form.select :purpose, @purpose_list.collect { |purpose| [purpose,purpose]}, prompt: 'Select Purpose...', style: "width: 500px" %>
     </div>
   </div>
 
   <div class="form-row">
-    <div class="form-group col-sm-2 col-sm-offset-5">
+    <div class="form-group col-sm-2 col-sm-offset-5 reg-temp-div">
       <h4><%= form.label :temperature %></h4>
       <%= form.text_field :temp, class: "form-control" %>
     </div>
