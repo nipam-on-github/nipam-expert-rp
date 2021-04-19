@@ -1,0 +1,8 @@
+class CreateRegisterNames < ActiveRecord::Migration[5.2]
+  def change
+    create_table :register_names do |t|
+
+      t.timestamps
+    end
+  end
+end
