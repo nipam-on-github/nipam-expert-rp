@@ -22,7 +22,7 @@ class RegisterContactsController < ApplicationController
         'number' => @register_contact.number
       }
 
-      redirect_to new_register_purpose_path
+      redirect_to new_register_temp_path
     else
       render :new
     end
