@@ -20,11 +20,18 @@ class RegisterPurposesController < ApplicationController
       # Instead of persisting the values to the
       # database, we're temporarily storing the
       # values in the session.
-      session[:register_purpose] = {
-        'purpose' => @register_purpose.purpose
-      }
+      full_params = register_purpose_params.merge(
+        name: session['register_name']['name'],
+        last_name: session['register_name']['last_name'],
+        number: session['register_contact']['number'],
+        temp: session['register_temp']['temp'],
+      )
 
-      redirect_to users_path
+      # Here we finally carry out the ultimate objective:
+      # creating a Register record in the database.
+      Register.create!(full_params)
+
+      redirect_to new_register_name_path
     else
       render :new
     end

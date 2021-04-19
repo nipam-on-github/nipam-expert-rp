@@ -19,7 +19,7 @@ class RegisterTempsController < ApplicationController
       # database, we're temporarily storing the
       # values in the session.
       session[:register_temp] = {
-        'number' => @register_temp.number
+        'temp' => @register_temp.temp
       }
 
       redirect_to new_register_purpose_path
@@ -34,7 +34,7 @@ class RegisterTempsController < ApplicationController
   # for an Active Record object.
   def register_temp_params
     params.require(:register_temp).permit(
-      :number
+      :temp
     )
   end
 end
