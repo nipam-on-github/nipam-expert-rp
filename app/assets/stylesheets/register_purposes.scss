@@ -1,0 +1,44 @@
+// Place all the styles related to the RegisterPurposes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#register-submit {
+	border: none;
+  	color: white;
+  	padding: 50px;
+  	text-align: center;
+  	text-decoration: none;
+	display: inline-block;
+	font-size: 35px;
+  	margin: 4px 2px;
+  	cursor: pointer;
+	border-radius: 50%;
+}
+
+#covid19 {
+	width: 75px;
+	height: 75px;
+	display: block;
+ 	margin-left: auto;
+  	margin-right: auto;
+}
+
+#nipam-logo {
+	display: block;
+ 	margin-left: auto;
+  	margin-right: auto;
+}
+
+#nipam-welcome-heading {
+	color: white;
+	text-align: center;
+}
+
+.reg-purpose-div select {
+  width: 100%;
+  height: 35px;
+} 
+
+.reg-temp-div input {
+  width: 120px;
+} 
