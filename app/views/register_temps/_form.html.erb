@@ -1,0 +1,40 @@
+  <div class="form-row">
+    <div class="form-group col-sm-3">
+      <%= image_tag("covid19-5.png", alt: 'covid-19', id: "covid19") %>
+    </div>
+
+    <div class="form-group col-sm-3 col-sm-offset-6">
+      <%= image_tag("covid19-5.png", alt: 'covid-19', id: "covid19") %>
+    </div>
+  </div>
+
+
+<%= form_with(model: register_temp, local: true) do |form| %>
+  <% if register_temp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(register_temp.errors.count, "error") %> prohibited this register from being saved:</h2>
+
+      <ul>
+      <% register_temp.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h4>Required fields are followed by <abbr title="Required">*</abbr></h4>
+  
+  <div class="form-row">
+    <div class="form-group col-sm-2 col-sm-offset-5 reg-temp-div">
+      <h4><%= form.label :temperature %></h4>
+      <%= form.text_field :temp, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="actions form-group col-sm-4 col-sm-offset-4">
+      <%= form.submit 'Submit', class: 'btn btn-primary', id: "register-submit" %> <hr />
+    </div>
+  </div>
+
+<% end %>

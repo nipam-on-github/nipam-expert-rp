@@ -11,13 +11,13 @@
 
   <body>
     
-    <%= render '/layouts/header' unless current_uri == '/new' || current_uri == '/registers' ||  current_uri == '/register_names/new' ||  current_uri == '/register_contacts/new' %>
+    <%= render '/layouts/header' unless current_uri == '/new' || current_uri == '/registers' ||  current_uri == '/register_names/new' ||  current_uri == '/register_contacts/new' ||  current_uri == '/register_temps/new' %>
     
     <div class="main">
       <%= yield %>
     </div>
     
-    <%= render '/layouts/footer' unless current_uri == '/new' || current_uri == '/registers' ||  current_uri == '/register_names/new' ||  current_uri == '/register_contacts/new' %>
+    <%= render '/layouts/footer' unless current_uri == '/new' || current_uri == '/registers' ||  current_uri == '/register_names/new' ||  current_uri == '/register_contacts/new' ||  current_uri == '/register_temps/new' %>
   </body>
   
 </html>
