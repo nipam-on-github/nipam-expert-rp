@@ -1,0 +1,16 @@
+<body style="background-image: url('nipam4.jpg'); background-size: 100% 100%;">
+<div id="new-register">
+  <div class="container">
+    <div class="row">
+      <div class="form-group col-md-8 col-md-offset-2">
+        <%= render '/layouts/alerts' %>
+        <%= image_tag("nipam-logo.png", alt: 'NIPAM', id: "nipam-logo") %>
+        <legend><h1 id="nipam-welcome-heading">VISITOR'S REGISTER</h1></legend>
+
+        <%= render 'form', register_contact: @register_contact %>
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
