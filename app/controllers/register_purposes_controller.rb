@@ -26,12 +26,22 @@ class RegisterPurposesController < ApplicationController
         number: session['register_contact']['number'],
         temp: session['register_temp']['temp'],
       )
+      first_name_var = session['register_name']['name']
+      last_name_var = session['register_name']['last_name']
+
+      full_register_name = "#{first_name_var} #{last_name_var}"
 
       # Here we finally carry out the ultimate objective:
       # creating a Register record in the database.
       Register.create!(full_params)
 
-      redirect_to new_register_name_path
+      @action_notice = "#{full_register_name} has been successfully saved. Welcome to NIPAM!"
+
+      session.delete('register_name')
+      session.delete('register_contact')
+      session.delete('register_temp')
+
+      redirect_to new_register_name_path, notice: @action_notice
     else
       render :new
     end
